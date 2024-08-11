@@ -1,0 +1,1 @@
+WITH Gaps AS (SELECT Id, Dt as "Sd", LEAD(dt) OVER (PARTITION BY Id ORDER BY Dt) as "Ed" FROM Dates) SELECT Id, Sd, Ed FROM Gaps where Ed IS NOT NULL;

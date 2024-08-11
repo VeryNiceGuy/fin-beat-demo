@@ -1,0 +1,2 @@
+SELECT  Clients.ClientName, COUNT(ClientContacts.Id) AS NumContacts FROM Clients LEFT JOIN ClientContacts ON Clients.Id = ClientContacts.ClientId GROUP BY Clients.Id;
+SELECT Clients.ClientName, COUNT(ClientContacts.Id) AS NumContacts FROM Clients INNER JOIN ClientContacts ON Clients.Id = ClientContacts.ClientId GROUP BY Clients.Id HAVING NumContacts > 2;
