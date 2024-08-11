@@ -44,7 +44,7 @@ public class FirstAssignmentController
 
             await _dbContext.AddAsync(new Item
             {
-                Id = i++,
+                Id = ++i,
                 Code = item.Key,
                 Value = item.Value
             });
